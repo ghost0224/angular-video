@@ -1,0 +1,15 @@
+<app-player #playerComponent></app-player>
+<div class="row" style="margin-top:10px">
+  <div class="col-sm-12">
+    <div class="col-sm-12 text-center">
+      <button id="btn_play" class="btn btn-default fa fa-play" [disabled]="playerComponent.playable" (click)="playerComponent.play()"></button>
+      <button id="btn_pause" class="btn btn-default fa fa-pause" [disabled]="playerComponent.pausable" (click)="playerComponent.pause()"></button>
+      <button id="btn_plus" class="btn btn-default fa fa-plus" [disabled]="playerComponent.volumePlus" (click)="playerComponent.plus()"></button>
+      <button id="btn_minus" class="btn btn-default fa fa-minus" [disabled]="playerComponent.volumeMinus" (click)="playerComponent.minus()"></button>
+      <button id="btn_stop" class="btn btn-default fa fa-stop" (click)="playerComponent.stop()"></button>
+      <button id="btn_headphones" class="btn btn-default fa fa-headphones" (click)="playerComponent.mute()"></button>
+      <button id="btn_up" class="btn btn-success fa fa-thumbs-o-up" (click)="clickLike()" #btnUp>{{likeCount}}</button>
+      <button id="btn_down" class="btn btn-danger fa fa-thumbs-o-down" (click)="clickUnLike()" #btnDown>{{unLikeCount}}</button>
+    </div>
+  </div>
+</div>

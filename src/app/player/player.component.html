@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-12">
+    <video id="videoPlayer" class="col-sm-12" #playerElement>
+      <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg">
+      <!--      http://www.w3school.com.cn/example/html5/mov_bbb.mp4-->
+      <track src="./assets/movie/bear.xml" srclang="en" label="English" kind="caption" default #playerTitle>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+<div class="row" style="padding:5px 30px 0px 30px;">
+  <div class="col-sm-12">
+    <div class="progress progress-striped active">
+      <div id="progress-bar" class="progress-bar  progress-bar-success" role="progressbar" #progressBar
+           aria-valuemin="0" aria-valuemax="100">
+      </div>
+    </div>
+  </div>
+</div>
