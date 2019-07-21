@@ -1,0 +1,14 @@
+<div class="row" style="padding-top: 3%">
+  <div class="col-md-6 col-sm-12 col-center-block">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div *ngIf="playlistData == null">Please start json-server.</div>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let data of playlistData">
+            {{data.title}} &nbsp; <i class="fa fa-check btn" (click)="approve(data.id, 0)" *ngIf="data.approved == 1"></i> &nbsp; <i class="fa fa-close btn" (click)="approve(data.id, 1)" *ngIf="data.approved == 0"></i> &nbsp; <i class="fa fa-pencil-square btn"></i> &nbsp; <i class="fa fa-trash btn" (click)="delete(data.id)"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

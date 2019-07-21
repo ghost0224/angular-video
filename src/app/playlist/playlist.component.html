@@ -5,20 +5,10 @@
   <div class="col-md-6 col-sm-12">
     <div class="row">
       <div class="col-md-12 col-sm-12">
+        <div *ngIf="playlistData == null">Please start json-server.</div>
         <ul class="list-group">
-          <li class="list-group-item">
-            <i class="fa fa-play btn" (click)="controlsComponent.playerComponent.playVideo('http://www.w3school.com.cn/i/movie.ogg','bear.xml')"> bear.ogg</i>
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-play btn" (click)="controlsComponent.playerComponent.playVideo('http://www.w3school.com.cn/example/html5/mov_bbb.mp4','butterfly.xml')"> butterfly.mp4</i>
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-play btn" (click)="controlsComponent.playerComponent.playVideo('http://www.w3school.com.cn/i/movie.ogg','bear.xml')"> bear.ogg</i>
-            <span class="badge">新</span>
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-play btn" (click)="controlsComponent.playerComponent.playVideo('http://www.w3school.com.cn/example/html5/mov_bbb.mp4','butterfly.xml')"> butterfly.mp4</i>
-            <span class="badge">新</span>
+          <li class="list-group-item" *ngFor="let data of playlistData">
+            <i class="fa fa-play btn" (click)="controlsComponent.playerComponent.playVideo(data.url,data.subTitle)"> {{data.title}}</i>
           </li>
         </ul>
       </div>
